@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e3e4a6;
+    font-family: 'Raleway', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.container {
+    width: 80%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.navbar {
+    padding-top: .5em;
+}
+
+.navbar .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+nav ul li {
+    list-style: none;
+    display: inline;
+    margin: 0 1em;
+    border: none;
+padding: none;
+}
+
+nav ul li a {
+    font-size: 1em;
+}
+
+ul li {
+    list-style: none;
+    border: solid 1px black;
+    border-radius: 10px;
+    padding: 3px 5px;
+}
+
+
+.logo {
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+section .container{
+    display: grid;
+    place-content: center;
+    text-align: center;
+    min-height: 80vh;
+}
+
+section h1 {
+    margin: 1em;
+    font-size: 2.4em;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 400;
+    position: relative;
+}
+
+section p {
+    font-size: 1.3em;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeInUp 2s forwards 5s;
+}
+
+section h1::before, section h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+section h1::before {
+    background: #e3e4a6;
+    animation: typewriter 4s steps(24) 1s forwards;
+}
+
+section h1::after {
+    width: .1em;
+    background: black;
+    animation: typewriter 4s steps(24) 1s forwards, blink 750ms steps(24)infinite;
+}
+
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
